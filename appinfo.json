@@ -1,0 +1,10 @@
+{
+	"id": "com.worldofnatecom.teamboxforwebos",
+	"version": "0.0.1",
+	"vendor": "worldofnate.com",
+	"type": "web",
+	"main": "index.html",
+	"title": "Teambox for webOS",
+	"icon": "icon.png",
+	"uiRevision":2
+}
