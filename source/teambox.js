@@ -11,24 +11,7 @@ enyo.kind({
 					]},
 					{kind: "Scroller", flex: 1, components: [
 						//this is the first one
-						{ name: "quickActionsDrawer",
-							caption: "Quick Actions",
-							captionClassName: "enyo-item",
-							kind: "enyo.Drawer",
-							open: false,
-							components: [
-										{kind: "RadioToolButtonGroup", value: 1, components: [
-											{kind: "RadioToolButton", value: "Search", label: "Search"},
-											{kind: "RadioToolButton", value: "Task", label: "Task"},
-											{kind: "RadioToolButton", value: "Comment", label: "Comment"}
-										]},
-										{kind: "RoundedSearchInput", hint: "Add a new task", alwaysLooksFocused:true},
-										{layoutKind: "HFlexLayout", style: "width: 320px;", components: [
-											{kind: "Picker", value: "Select a Task List", flex: 6, items: ["Select a Task List", "Task List 1", "Task List 2", "Task List 3", "Task List 4"]},
-											{kind: "Button", caption: "Add", flex: 1, className: "enyo-button-dark"}
-										]}
-									]
-								},
+						{kind: "RoundedSearchInput", hint: "Type a new search term"},
 						{kind: "Item", components: [
 							{kind: "Image", src: "images/account_icon.jpg"},
 							{content: "Recent Activity"}
@@ -37,13 +20,7 @@ enyo.kind({
 							{kind: "Image", src: "images/account_icon.jpg"},
 							{content: "My Tasks"}
 						]},
-						{
-							name: "projectsDrawer",
-							caption: "Projects",
-							captionClassName: "enyo-item",
-							kind: "enyo.Drawer",
-							open: false,
-							components: [
+						{name: "projectsDrawer", caption: "Projects", captionClassName: "enyo-item", kind: "enyo.Drawer", open: false, components: [
 								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem"},
 								{kind: "SwipeableItem", content: "Project 2", onConfirm: "deleteItem"},
 								{kind: "SwipeableItem", content: "My New Project", onConfirm: "deleteItem"}
