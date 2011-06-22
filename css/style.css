@@ -1,0 +1,60 @@
+/* theming for teambox specific items */
+
+.label-padding{
+	padding: 5px 10px 0px 10px;
+}
+
+.label-icon{
+	height: 40px;
+	width: 40px;
+	float: left;
+}
+.label-text{
+	height: 40px;
+	padding-top:7px;
+	margin-left:5px;
+	width: 250px;
+	float: left;
+}
+
+.label-text-inactive{
+	height: 40px;
+	padding-top:7px;
+	margin-left:5px;
+	width: 250px;
+	float: left;
+	color:#999;
+}
+
+
+.clearit{
+	clear: both;
+	height:0px;
+}
+
+.label-active {
+	background-position-x: 0px;
+}
+
+.label-inactive{
+	background-position-x: -40px;
+}
+
+.label-inverse{
+	background-position-x: -80px;
+}
+
+.label-activity{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: 0px;
+}
+
+.label-tasks{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -160px;
+}
+
+.label-projects{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -40px;
+}

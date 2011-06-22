@@ -11,28 +11,36 @@ enyo.kind({
 					]},
 					{kind: "Scroller", flex: 1, components: [
 						//this is the first one
-						{kind: "RoundedSearchInput", hint: "Type a new search term"},
 						{kind: "Item", components: [
-							{kind: "Image", src: "images/account_icon.jpg"},
-							{content: "Recent Activity"}
+							{kind: "RoundedSearchInput", hint: "Type a new search term"},
 						]},
-						{kind: "Item", components: [
-							{kind: "Image", src: "images/account_icon.jpg"},
-							{content: "My Tasks"}
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-activity label-active"},
+							{nodeTag:"div", content:"Recent Activity", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "projectsDrawer", caption: "Projects", captionClassName: "enyo-item", kind: "enyo.Drawer", open: false, components: [
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-tasks label-active"},
+							{nodeTag:"div", content:"My Tasks", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-projects label-active"},
+							{nodeTag:"div", content:"Projects", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{name: "projectsDrawer", kind: "enyo.Drawer", open: true, components: [
 								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem"},
 								{kind: "SwipeableItem", content: "Project 2", onConfirm: "deleteItem"},
 								{kind: "SwipeableItem", content: "My New Project", onConfirm: "deleteItem"}
 							]
 						},
-						{
-							name: "archivedProjectsDrawer",
-							caption: "Archived Projects",
-							captionClassName: "enyo-item",
-							kind: "enyo.Drawer",
-							open: false,
-							components: [
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-projects label-inactive"},
+							{nodeTag:"div", content:"Archived Projects", className:"label-text-inactive"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{name: "archivedProjectsDrawer", kind: "enyo.Drawer", captionClassName: "enyo-item", open: true, components: [
 								{kind: "Item", content: "Project 1"},
 								{kind: "Item", content: "Project 2"},
 								{kind: "Item", content: "My New Project"}
