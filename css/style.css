@@ -49,12 +49,37 @@
 	background-position-y: 0px;
 }
 
+.label-projects{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -40px;
+}
+
+.label-conversations{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -80px;
+}
+
+.label-tasklists{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -120px;
+}
+
 .label-tasks{
 	background-image: url("../images/teambox_sprites.png");
 	background-position-y: -160px;
 }
 
-.label-projects{
+.label-pages{
 	background-image: url("../images/teambox_sprites.png");
-	background-position-y: -40px;
+	background-position-y: -200px;
+}
+
+.label-files{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -240px;
+}
+
+.label-people{
+	background-image: url("../images/teambox_sprites.png");
+	background-position-y: -280px;
 }

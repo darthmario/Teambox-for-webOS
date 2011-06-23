@@ -2,19 +2,27 @@
 enyo.kind({
 	name: "teambox",
 	kind: enyo.VFlexBox,
+	closeDrawer: function() {
+		//some stuff
+	},
 	components: [
 		{name: "slidingPane", kind: "SlidingPane", flex: 1, components: [
 			{name: "left", width: "320px", kind:"SlidingView", components: [
-					{kind: "PageHeader", components: [
-						{kind: "Image", src: "images/account_icon.jpg"},
-						{content: "Darthmario", className: "enyo-text-ellipsis"}
+					{kind: "PageHeader",  , components: [
+						{nodeTag:"div", components: [
+							{kind: "Image", src: "images/account_icon.jpg"},
+							{nodeTag:"div", content:"Darthmario", className:"label-text", onclick: "closeDrawer"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+					]},
+					{name: "quickToolsDrawer", kind: "enyo.Drawer", open: true, components: [
+						{kind: "Item", components: [
+							{kind: "RoundedSearchInput", hint: "Type a new search term"}
+						]}
 					]},
 					{kind: "Scroller", flex: 1, components: [
 						//this is the first one
-						{kind: "Item", components: [
-							{kind: "RoundedSearchInput", hint: "Type a new search term"},
-						]},
-						{kind: "Item", className:"label-padding", components: [
+						{kind: "Item", className:"label-padding", tapHighlight: true, components: [
 							{nodeTag:"div", className:"label-icon label-activity label-active"},
 							{nodeTag:"div", content:"Recent Activity", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
@@ -40,7 +48,7 @@ enyo.kind({
 							{nodeTag:"div", content:"Archived Projects", className:"label-text-inactive"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "archivedProjectsDrawer", kind: "enyo.Drawer", captionClassName: "enyo-item", open: true, components: [
+						{name: "archivedProjectsDrawer", kind: "enyo.Drawer", captionClassName: "enyo-item", open: false, components: [
 								{kind: "Item", content: "Project 1"},
 								{kind: "Item", content: "Project 2"},
 								{kind: "Item", content: "My New Project"}
@@ -53,54 +61,64 @@ enyo.kind({
 			]},
 			{name: "middle", width: "320px", kind:"SlidingView", peekWidth: 50, components: [
 					{kind: "PageHeader", components: [
-						{kind: "Image", src: "images/account_icon.jpg"},
-						{content: "My Project", className: "enyo-text-ellipsis"},
+						{nodeTag:"div", components: [
+							{nodeTag:"div", className:"label-icon label-projects label-active"},
+							{nodeTag:"div", content:"My Project", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
 					]},
 					{kind: "Scroller", flex: 1, components: [
 						//Insert your components here
-						{kind: "Item", components: [
-							{kind: "Image", src: "images/account_icon.jpg"},
-							{content: "Recent Activity"}
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-activity label-active"},
+							{nodeTag:"div", content:"Recent Activity", className:"label-text", components:[
+							]},
+							{nodeTag:"div", className:"clearit"}
 						]},
-						{
-							name: "projectConversationsDrawer",
-							caption: "Conversations",
-							captionClassName: "enyo-item",
-							kind: "enyo.Drawer",
-							open: false,
-							components: [
-								{kind: "Item", content: "Conversation 1"},
-								{kind: "Item", content: "Conversation 2"},
-								{kind: "Item", content: "My New Conversation"}
-							]
-						},
-						{
-							name: "projectTaskListsDrawer",
-							caption: "Task Lists",
-							captionClassName: "enyo-item",
-							kind: "enyo.Drawer",
-							open: false,
-							components: [
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-conversations label-active"},
+							{nodeTag:"div", content:"Conversations", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{name: "projectConversationsDrawer", kind: "enyo.Drawer", open: false, components: [
+							{kind: "Item", content: "Conversation 1"},
+							{kind: "Item", content: "Conversation 2"},
+							{kind: "Item", content: "My New Conversation"}
+						]},
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-tasklists label-active"},
+							{nodeTag:"div", content:"Task Lists", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{name: "projectTaskListsDrawer", kind: "enyo.Drawer", open: false, components: [
 								{kind: "Item", content: "Task Lists 1"},
 								{kind: "Item", content: "Task Lists 2"},
 								{kind: "Item", content: "My New Task Lists"}
-							]
-						},
-						{
-							name: "projectPagesDrawer",
-							caption: "Pages",
-							captionClassName: "enyo-item",
-							kind: "enyo.Drawer",
-							open: false,
-							components: [
+						]},
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-pages label-active"},
+							{nodeTag:"div", content:"Pages", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{name: "projectPagesDrawer", kind: "enyo.Drawer", open: false, components: [
 								{kind: "Item", content: "Page 1"},
 								{kind: "Item", content: "Page 2"},
 								{kind: "Item", content: "My New Page"}
-							]
-						},
-						{kind: "Item", components: [
-							{kind: "Image", src: "images/account_icon.jpg"},
-							{content: "People and Permissions"}
+						]},
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-files label-active"},
+							{nodeTag:"div", content:"Files", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{kind: "Item", className:"label-padding", components: [
+							{nodeTag:"div", className:"label-icon label-people label-active"},
+							{nodeTag:"div", content:"People &amp; Permissions", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
+						{name: "projectPeopleDrawer", kind: "enyo.Drawer", open: false, components: [
+							{kind: "Item", content: "Person1"},
+							{kind: "Item", content: "Person2"},
+							{kind: "Item", content: "Person3"}
 						]}
 					]},
 					{kind: "Toolbar", components: [
@@ -109,8 +127,11 @@ enyo.kind({
 			]},
 			{name: "right", kind:"SlidingView", peekWidth: 100, flex: 1, components: [
 					{kind: "PageHeader", components: [
-						{kind: "Image", src: "images/account_icon.jpg"},
-						{content: "Task List 3", className: "enyo-text-ellipsis"},
+						{nodeTag:"div", components: [
+							{nodeTag:"div", className:"label-icon label-tasklists label-active"},
+							{nodeTag:"div", content:"Selected Task List", className:"label-text"},
+							{nodeTag:"div", className:"clearit"}
+						]},
 					]},
 					{kind: "Scroller", flex: 1, components: [
 						{
@@ -238,3 +259,4 @@ enyo.kind({
 		]}
 	]
 });
+
