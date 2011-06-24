@@ -2,16 +2,13 @@
 enyo.kind({
 	name: "teambox",
 	kind: enyo.VFlexBox,
-	closeDrawer: function() {
-		//some stuff
-	},
 	components: [
 		{name: "slidingPane", kind: "SlidingPane", flex: 1, components: [
 			{name: "left", width: "320px", kind:"SlidingView", components: [
-					{kind: "PageHeader",  , components: [
+					{kind: "PageHeader", components: [
 						{nodeTag:"div", components: [
 							{kind: "Image", src: "images/account_icon.jpg"},
-							{nodeTag:"div", content:"Darthmario", className:"label-text", onclick: "closeDrawer"},
+							{nodeTag:"div", content:"Darthmario", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
 					]},
@@ -32,13 +29,13 @@ enyo.kind({
 							{nodeTag:"div", content:"My Tasks", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{kind: "Item", className:"label-padding", components: [
+						{kind: "Item", className:"label-padding", onclick: "teamboxDrawer", value: "projectsDrawer", components: [
 							{nodeTag:"div", className:"label-icon label-projects label-active"},
 							{nodeTag:"div", content:"Projects", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
 						{name: "projectsDrawer", kind: "enyo.Drawer", open: true, components: [
-								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem"},
+								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem", onclick: "teamboxDrawer"},
 								{kind: "SwipeableItem", content: "Project 2", onConfirm: "deleteItem"},
 								{kind: "SwipeableItem", content: "My New Project", onConfirm: "deleteItem"}
 							]
@@ -257,6 +254,12 @@ enyo.kind({
 					]}
 			]}
 		]}
-	]
+	],
+	teamboxDrawer: function(inSender) {
+		//target = inSender.value;
+		//target.drawer.close();
+		this.$.content.setContent("I'm selected!");
+	}
+
 });
 
