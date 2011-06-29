@@ -29,13 +29,13 @@ enyo.kind({
 							{nodeTag:"div", content:"My Tasks", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{kind: "Item", className:"label-padding", onclick: "teamboxDrawer", value: "projectsDrawer", components: [
+						{kind: "Item", name:"draweritemproject", className:"label-padding", onclick: "teamboxDrawer", value: "projectsDrawer", components: [
 							{nodeTag:"div", className:"label-icon label-projects label-active"},
 							{nodeTag:"div", content:"Projects", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
 						{name: "projectsDrawer", kind: "enyo.Drawer", open: true, components: [
-								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem", onclick: "teamboxDrawer"},
+								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem", name:"Project1"},
 								{kind: "SwipeableItem", content: "Project 2", onConfirm: "deleteItem"},
 								{kind: "SwipeableItem", content: "My New Project", onConfirm: "deleteItem"}
 							]
@@ -256,9 +256,9 @@ enyo.kind({
 		]}
 	],
 	teamboxDrawer: function(inSender) {
-		//target = inSender.value;
-		//target.drawer.close();
-		this.$.content.setContent("I'm selected!");
+		//this.$.projectsDrawer.setOpen(false);
+		openValue = this.$.projectsDrawer.open;
+		this.$.Project1.setContent(this.$.inSender);
 	}
 
 });
