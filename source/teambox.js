@@ -6,10 +6,8 @@ enyo.kind({
 		{name: "slidingPane", kind: "SlidingPane", flex: 1, components: [
 			{name: "left", width: "320px", kind:"SlidingView", components: [
 					{kind: "PageHeader", components: [
-						{nodeTag:"div", components: [
+						{nodeTag:"div", content:"Darthmario", components: [
 							{kind: "Image", src: "images/account_icon.jpg"},
-							{nodeTag:"div", content:"Darthmario", className:"label-text"},
-							{nodeTag:"div", className:"clearit"}
 						]},
 					]},
 					{name: "quickToolsDrawer", kind: "enyo.Drawer", open: true, components: [
@@ -34,10 +32,11 @@ enyo.kind({
 							{nodeTag:"div", content:"Projects", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "projectsDrawer", kind: "enyo.Drawer", open: true, components: [
-								{kind: "SwipeableItem", content: "Project 1", onConfirm: "deleteItem", name:"Project1"},
-								{kind: "SwipeableItem", content: "Project 2", onConfirm: "deleteItem"},
-								{kind: "SwipeableItem", content: "My New Project", onConfirm: "deleteItem"}
+						{name: "projectsDrawer", kind: "enyo.Drawer", style:"background-color:#e9e9e9", open: true, components: [
+								{kind: "Item", content: "Teambox Community", onConfirm: "deleteItem", name:"Project1", style:"padding:15px 20px;"},
+								{kind: "Item", content: "iOS Apps", onConfirm: "deleteItem"},
+								{kind: "Item", content: "webOS App", onConfirm: "deleteItem"},
+								{kind: "Item", content: "Api Community", onConfirm: "deleteItem"}
 							]
 						},
 						{kind: "Item", className:"label-padding", components: [
@@ -57,8 +56,8 @@ enyo.kind({
 					]}
 			]},
 			{name: "middle", width: "320px", kind:"SlidingView", peekWidth: 50, components: [
-					{kind: "PageHeader", components: [
-						{nodeTag:"div", components: [
+					{kind: "PageHeader", style:"background-color:blue; padding:0;", components: [
+						{nodeTag:"div", style:"background-color:red;  margin:0; border:none;", components: [
 							{nodeTag:"div", className:"label-icon label-projects label-active"},
 							{nodeTag:"div", content:"My Project", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
@@ -87,10 +86,11 @@ enyo.kind({
 							{nodeTag:"div", content:"Task Lists", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "projectTaskListsDrawer", kind: "enyo.Drawer", open: false, components: [
-								{kind: "Item", content: "Task Lists 1"},
-								{kind: "Item", content: "Task Lists 2"},
-								{kind: "Item", content: "My New Task Lists"}
+						{name: "projectTaskListsDrawer", kind: "enyo.Drawer", open: true, components: [
+								{kind: "Item", content: "Development"},
+								{kind: "Item", content: "UI Revisions"},
+								{kind: "Item", content: "Future Functionality"},
+								{kind: "Item", content: "Case Study Questions"}
 						]},
 						{kind: "Item", className:"label-padding", components: [
 							{nodeTag:"div", className:"label-icon label-pages label-active"},
@@ -132,8 +132,8 @@ enyo.kind({
 					]},
 					{kind: "Scroller", flex: 1, components: [
 						{
-							name: "taskListDrawer1",
-							caption: "A Task with a date",
+							name: "taskListDrawer2",
+							caption: "Synergy Connector",
 							captionClassName: "enyo-item",
 							kind: "enyo.Drawer",
 							open: false,
@@ -144,20 +144,20 @@ enyo.kind({
 							]
 						},
 						{
-							name: "taskListDrawer2",
-							caption: "New Unassigned task with no date",
+							name: "taskListDrawer1",
+							caption: "Exhibition Mode",
 							captionClassName: "enyo-item",
 							kind: "enyo.Drawer",
 							open: false,
 							components: [
-								{kind: "Item", content: "comment 1"},
-								{kind: "Item", content: "Comment 2"},
-								{kind: "Item", content: "Comment 3"}
+								{kind: "Item", content: "Nate Craddock - June 5 - On both the phones and tablet webOS has a special mode for when the device is docked on the touchstone."},
+								{kind: "Item", content: "Pablo Villalba - June 5 - This is how the Chrome extension shows a digest.. it could be overkill for your case, but I figured it'd be nice to throw a screenshot into this thread"},
+								{kind: "Item", content: "Nate Craddock - June 5 - this looks pretty much exactly like what I was thinking! :) I have some other unclear ideas as well, but I'm going to wait to develop them a bit more until after I get the first version in more shape."}
 							]
 						},
 						{
 							name: "taskListDrawer3",
-							caption: "This task is currently on hold",
+							caption: "Just Type Integration",
 							captionClassName: "enyo-item",
 							kind: "enyo.Drawer",
 							open: false,
@@ -169,7 +169,7 @@ enyo.kind({
 						},
 						{
 							name: "taskListDrawer4",
-							caption: "A task with a name that is longer than the others and has a user and a date.",
+							caption: "cached items so that they're viewable when not on wifi or cellular connection.",
 							captionClassName: "enyo-item",
 							kind: "enyo.Drawer",
 							open: false,
@@ -181,7 +181,7 @@ enyo.kind({
 						},
 						{
 							name: "taskListDrawer5",
-							caption: "Another new task that is open to assign",
+							caption: "extend sprite to add states for inverted (grey on block) as well as deactivated states.",
 							captionClassName: "enyo-item",
 							kind: "enyo.Drawer",
 							open: false,
@@ -193,7 +193,7 @@ enyo.kind({
 						},
 						{
 							name: "taskListDrawer6",
-							caption: "A newly completed task",
+							caption: "Make active pane icons go from indented grey state to colored floating icons",
 							captionClassName: "enyo-item",
 							kind: "enyo.Drawer",
 							open: false,
