@@ -32,11 +32,13 @@ enyo.kind({
 							{nodeTag:"div", content:"Projects", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "projectsDrawer", kind: "enyo.Drawer", style:"background-color:#e9e9e9", open: true, components: [
-								{kind: "Item", content: "Teambox Community", onConfirm: "deleteItem", name:"Project1", style:"padding:15px 20px;"},
-								{kind: "Item", content: "iOS Apps", onConfirm: "deleteItem"},
-								{kind: "Item", content: "webOS App", onConfirm: "deleteItem"},
-								{kind: "Item", content: "Api Community", onConfirm: "deleteItem"}
+						{name: "projectsDrawer", kind: "enyo.Drawer", caption:"Projects", captionClassName: "enyo-item", open: false, components: [
+								{nodeTag:"div", className:"teambox-drawer-shadow", components: [
+									{kind: "Item", content: "Teambox Community", name:"Project1", className:"enyo-first"},
+									{kind: "Item", content: "iOS Apps", onConfirm: "deleteItem"},
+									{kind: "Item", content: "webOS App", onConfirm: "deleteItem"},
+									{kind: "Item", content: "Api Community", onConfirm: "deleteItem", className:"enyo-last"}
+								]}
 							]
 						},
 						{kind: "Item", className:"label-padding", components: [
@@ -44,10 +46,12 @@ enyo.kind({
 							{nodeTag:"div", content:"Archived Projects", className:"label-text-inactive"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "archivedProjectsDrawer", kind: "enyo.Drawer", captionClassName: "enyo-item", open: false, components: [
-								{kind: "Item", content: "Project 1"},
-								{kind: "Item", content: "Project 2"},
-								{kind: "Item", content: "My New Project"}
+						{name: "archivedProjectsDrawer", kind: "enyo.Drawer", caption:"Archived Projects", captionClassName: "enyo-item", open: false, components: [
+								{nodeTag:"div", className:"teambox-drawer-shadow", components: [
+									{kind: "Item", content: "Project 1", className:"enyo-first"},
+									{kind: "Item", content: "Project 2"},
+									{kind: "Item", content: "My New Project", className:"enyo-last"}
+								]}
 							]
 						}
 					]},

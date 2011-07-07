@@ -83,3 +83,11 @@
 	background-image: url("../images/teambox_sprites.png");
 	background-position-y: -280px;
 }
+
+.teambox-drawer-shadow{
+	-webkit-border-image: url("../images/teambox-drawer-background.png") 5 0 repeat;
+	-webkit-box-sizing: border-box;
+	border-width: 5px 0;
+	box-sizing: border-box;
+	background-color:#f0f0f0;
+}
