@@ -4,11 +4,10 @@ enyo.kind({
 	kind: enyo.VFlexBox,
 	components: [
 		{name: "slidingPane", kind: "SlidingPane", flex: 1, components: [
-			{name: "left", width: "320px", kind:"SlidingView", components: [
+			{name: "left", width: "16em", kind:"SlidingView", components: [
 					{kind: "PageHeader", components: [
-						{nodeTag:"div", content:"Darthmario", components: [
-							{kind: "Image", src: "images/account_icon.jpg"},
-						]},
+						{kind: "Image", src: "images/account_icon.jpg"},
+						{content: "Darthmario"}
 					]},
 					{name: "quickToolsDrawer", kind: "enyo.Drawer", open: true, components: [
 						{kind: "Item", components: [
@@ -32,7 +31,7 @@ enyo.kind({
 							{nodeTag:"div", content:"Projects", className:"label-text"},
 							{nodeTag:"div", className:"clearit"}
 						]},
-						{name: "projectsDrawer", kind: "enyo.Drawer", caption:"Projects", captionClassName: "enyo-item", open: false, components: [
+						{name: "projectsDrawer", kind: "enyo.Drawer", open: false, components: [
 								{nodeTag:"div", className:"teambox-drawer-shadow", components: [
 									{kind: "Item", content: "Teambox Community", name:"Project1", className:"enyo-first"},
 									{kind: "Item", content: "iOS Apps", onConfirm: "deleteItem"},
@@ -59,7 +58,7 @@ enyo.kind({
 						{kind: "GrabButton", content:"Tester"}
 					]}
 			]},
-			{name: "middle", width: "320px", kind:"SlidingView", peekWidth: 50, components: [
+			{name: "middle", width: "16em", kind:"SlidingView", peekWidth: 50, components: [
 					{kind: "PageHeader", style:"background-color:blue; padding:0;", components: [
 						{nodeTag:"div", style:"background-color:red;  margin:0; border:none;", components: [
 							{nodeTag:"div", className:"label-icon label-projects label-active"},
@@ -260,10 +259,8 @@ enyo.kind({
 		]}
 	],
 	teamboxDrawer: function(inSender) {
-		//this.$.projectsDrawer.setOpen(false);
-		openValue = this.$.projectsDrawer.open;
-		this.$.Project1.setContent(this.$.inSender);
-	}
-
+		this.$.Project1.setContent(inSender.value);
+		this.$(inSender.value).toggleOpen();
+	},
 });
 
